@@ -1,0 +1,17 @@
+{
+  "name": "time-zone-offset-kit",
+  "version": "0.1.0",
+  "description": "Converts a UTC offset in minutes into ISO 8601 extended time format.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {}
+}
