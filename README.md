@@ -23,3 +23,10 @@ The trade-off: it is a pure formatter, not a validator. It will happily render `
 A zero offset is returned as `+00:00`, not `Z`. Both are valid ISO 8601, but mixing them breaks string comparisons. If you need `Z`, replace it yourself after formatting.
 
 Non-integer inputs (e.g. `90.5`) throw a `TypeError`. ISO 8601 offsets have no sub-minute component.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
